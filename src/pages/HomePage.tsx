@@ -154,6 +154,7 @@ export function AnimatedBackground() {
           </radialGradient>
         </defs>
       </svg>
+
     </div>
   );
 }
