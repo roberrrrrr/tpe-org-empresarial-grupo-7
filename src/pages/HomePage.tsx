@@ -637,7 +637,7 @@ const ContactSection = () => {
               style={{ border: 0 }}
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=-37.324713,-59.143377&z=17&output=embed"
+              src="https://www.google.com/maps?q=-37.3264934,-59.1322308&z=17&output=embed"
             ></iframe>
           </div>
         </div>
