@@ -40,7 +40,7 @@ export function AnimatedBackground() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", handleMouseMove);
@@ -398,10 +398,8 @@ const ServicesSection = () => {
     <section id="servicios" className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight"
-
-
-          >
+          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight uppercase"
+              style={{fontFamily: "'Russo One', 'Arial Black', sans-serif"}}>
             Nuestros Servicios
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full" />
@@ -420,13 +418,15 @@ const ServicesSection = () => {
                 <div className={`inline-flex p-4 rounded-2xl mb-4 bg-${service.color}-100 group-hover:bg-${service.color}-200 transition-colors duration-300`}>
                   <service.icon className={`h-8 w-8 text-${service.color}-600 group-hover:scale-110 transition-transform duration-300`} />
                 </div>
-                <CardTitle className="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                <CardTitle className="text-xl lg:text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300 tracking-wide"
+                           style={{fontFamily: "'Poppins'"}}>
                   {service.title}
                 </CardTitle>
               </CardHeader>
               
               <CardContent className="relative z-10">
-                <p className="text-gray-600 text-center leading-relaxed">
+                <p className="text-gray-600 text-center leading-relaxed font-medium"
+                   style={{fontFamily: "'Poppins'"}}>
                   {service.description}
                 </p>
               </CardContent>
@@ -465,7 +465,8 @@ const TechSection = () => {
     <section className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight uppercase"
+              style={{fontFamily: "'Russo One', 'Arial Black', sans-serif"}}>
             Tecnología Avanzada
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full" />
@@ -480,10 +481,12 @@ const TechSection = () => {
               <div className={`inline-flex p-6 rounded-3xl mb-6 bg-${feature.color}-100 group-hover:bg-${feature.color}-200 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl`}>
                 <feature.icon className={`h-12 w-12 text-${feature.color}-600 group-hover:scale-110 transition-transform duration-300`} />
               </div>
-              <h3 className="text-2xl font-medium mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+              <h3 className="text-2xl lg:text-3xl font-semibold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 tracking-wide"
+                  style={{fontFamily: "'Poppins'"}}>
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed max-w-sm mx-auto">
+              <p className="text-gray-600 leading-relaxed max-w-sm mx-auto font-medium"
+                 style={{fontFamily: "'Poppins'"}}>
                 {feature.description}
               </p>
             </div>
@@ -500,7 +503,8 @@ const PricingSection = () => {
     <section id="precios" className="py-24 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight uppercase"
+              style={{fontFamily: "'Russo One', 'Arial Black', sans-serif"}}>
             Planes y Precios
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full" />
@@ -513,15 +517,18 @@ const PricingSection = () => {
             
             <CardHeader className="relative z-10 text-center pb-6">
 
-              <CardTitle className="text-3xl font-light text-gray-900 mb-2">
+              <CardTitle className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 tracking-wide"
+                         style={{fontFamily: "'Poppins'"}}>
                 Plan Mensual
               </CardTitle>
-              <CardDescription className="text-gray-600 mb-6">
+              <CardDescription className="text-gray-600 mb-6 font-medium text-lg"
+                              style={{fontFamily: "'Poppins'"}}>
                 Ideal para uso frecuente
               </CardDescription>
-              <div className="text-5xl font-light text-blue-600 mb-2">
+              <div className="text-5xl lg:text-6xl font-bold text-blue-600 mb-2 tracking-tight"
+                   style={{fontFamily: "'Poppins', 'Arial Black', sans-serif"}}>
                 $15.000
-                <span className="text-xl text-gray-400 font-normal">/mes</span>
+                <span className="text-xl text-gray-400 font-normal" style={{fontFamily: "'Poppins'"}}>/mes</span>
               </div>
             </CardHeader>
             
@@ -534,13 +541,15 @@ const PricingSection = () => {
                   'Carga eléctrica gratuita',
                   'App premium'
                 ].map((feature) => (
-                  <li key={feature} className="flex items-center text-gray-700">
+                  <li key={feature} className="flex items-center text-gray-700 font-medium"
+                      style={{fontFamily: "'Poppins'"}}>
                     <div className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
                     {feature}
                   </li>
                 ))}
               </ul>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl tracking-wide"
+                      style={{fontFamily: "'Poppins'"}}>
                 Suscribirse
               </Button>
             </CardContent>
@@ -551,13 +560,16 @@ const PricingSection = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 to-emerald-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <CardHeader className="relative z-10 text-center pb-6">
-              <CardTitle className="text-3xl font-light text-gray-900 mb-2">
+              <CardTitle className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 tracking-wide"
+                         style={{fontFamily: "'Poppins'"}}>
                 Pago por Uso
               </CardTitle>
-              <CardDescription className="text-gray-600 mb-6">
+              <CardDescription className="text-gray-600 mb-6 font-medium text-lg"
+                              style={{fontFamily: "'Poppins'"}}>
                 Flexibilidad total
               </CardDescription>
-              <div className="text-5xl font-light text-green-600 mb-2">
+              <div className="text-5xl lg:text-6xl font-bold text-green-600 mb-2 tracking-tight"
+                   style={{fontFamily: "'Poppins', 'Arial Black', sans-serif"}}>
                 Variable
               </div>
             </CardHeader>
@@ -571,7 +583,8 @@ const PricingSection = () => {
                   'Descuento combo: 15%',
                   'Sin compromisos'
                 ].map((feature) => (
-                  <li key={feature} className="flex items-center text-gray-700">
+                  <li key={feature} className="flex items-center text-gray-700 font-medium"
+                      style={{fontFamily: "'Poppins'"}}>
                     <div className="w-2 h-2 bg-green-600 rounded-full mr-3" />
                     {feature}
                   </li>
@@ -579,7 +592,8 @@ const PricingSection = () => {
               </ul>
               <Button 
                 variant="outline" 
-                className="w-full border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-4 rounded-2xl text-lg font-medium transition-all duration-300 hover:scale-105"
+                className="w-full border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 tracking-wide"
+                style={{fontFamily: "'Poppins'"}}
               >
                 Usar Ahora
               </Button>
@@ -597,7 +611,8 @@ const ContactSection = () => {
     <section id="contacto" className="py-24 px-6 relative">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight uppercase"
+              style={{fontFamily: "'Russo One', 'Arial Black', sans-serif"}}>
             Visitanos 
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full" />
@@ -605,7 +620,8 @@ const ContactSection = () => {
 
         <div className="flex items-center justify-center mb-8 group">
           <MapPin className="h-6 w-6 text-red-500 mr-3 group-hover:scale-110 transition-transform duration-300" />
-          <p className="text-xl text-gray-700 font-medium">
+          <p className="text-xl text-gray-700 font-semibold tracking-wide"
+             style={{fontFamily: "'Poppins'"}}>
             Pinto y Leandro Alem, Centro - Tandil, Buenos Aires
           </p>
         </div>
@@ -641,17 +657,20 @@ const Footer = () => {
             {/*   <Logo></Logo> */}
             {/*   <span className="text-xl font-medium">El Imperio del Auto</span> */}
             {/* </div> */}
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed font-medium"
+               style={{fontFamily: "'Poppins'"}}>
               Innovación, seguridad y sostenibilidad en el cuidado integral de tu vehículo.
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-6 text-lg">Servicios</h4>
+            <h4 className="font-semibold mb-6 text-lg tracking-wide"
+                style={{fontFamily: "'Poppins'"}}>Servicios</h4>
             <ul className="space-y-3">
               {['Estacionamiento', 'Lavado Automático', 'Carga Eléctrica', 'Monitoreo 24/7'].map((service) => (
                 <li key={service}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium"
+                     style={{fontFamily: "'Poppins'"}}>
                     {service}
                   </a>
                 </li>
@@ -660,32 +679,38 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-6 text-lg">Contacto</h4>
+            <h4 className="font-semibold mb-6 text-lg tracking-wide"
+                style={{fontFamily: "'Poppins'"}}>Contacto</h4>
             <ul className="space-y-3 text-gray-400">
-              <li className="flex items-center">
+              <li className="flex items-center font-medium"
+                  style={{fontFamily: "'Poppins'"}}>
                 <span className="mr-2">📞</span> (2494) 123-456
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center font-medium"
+                  style={{fontFamily: "'Poppins'"}}>
                 <span className="mr-2">📧</span> info@imperioauto.com
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center font-medium"
+                  style={{fontFamily: "'Poppins'"}}>
                 <span className="mr-2">📍</span> Pinto y L. Alem, Tandil
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-6 text-lg">Horarios</h4>
+            <h4 className="font-semibold mb-6 text-lg tracking-wide"
+                style={{fontFamily: "'Poppins'"}}>Horarios</h4>
             <ul className="space-y-3 text-gray-400">
-              <li>Lun-Vie: 7:00 - 22:00</li>
-              <li>Sábados: 8:00 - 20:00</li>
-              <li>Domingos: 9:00 - 18:00</li>
+              <li className="font-medium" style={{fontFamily: "'Poppins'"}}>Lun-Vie: 7:00 - 22:00</li>
+              <li className="font-medium" style={{fontFamily: "'Poppins'"}}>Sábados: 8:00 - 20:00</li>
+              <li className="font-medium" style={{fontFamily: "'Poppins'"}}>Domingos: 9:00 - 18:00</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400">
+          <p className="text-gray-400 font-medium"
+             style={{fontFamily: "'Poppins'"}}>
             &copy; 2025 El Imperio del Auto. Todos los derechos reservados.
           </p>
         </div>
